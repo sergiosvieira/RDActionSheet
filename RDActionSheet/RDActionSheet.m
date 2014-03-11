@@ -37,7 +37,7 @@ const CGFloat kButtonPadding = 10;
 const CGFloat kButtonHeight = 47;
 
 const CGFloat kPortraitButtonWidth = 300;
-const CGFloat kLandscapeButtonWidth = 450;
+const CGFloat kLandscapeButtonWidth = 300;
 
 const CGFloat kActionSheetAnimationTime = 0.2;
 const CGFloat kBlackoutViewFadeInOpacity = 0.6;
@@ -180,13 +180,13 @@ const CGFloat kBlackoutViewFadeInOpacity = 0.6;
     for (UIButton *button in self.buttons) {
         
         CGFloat buttonWidth;
-        UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
-        if (orientation == UIDeviceOrientationLandscapeLeft || orientation == UIDeviceOrientationLandscapeRight) {
-            buttonWidth = kLandscapeButtonWidth;
-        } 
-        else {
+//        UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
+//        if (orientation == UIDeviceOrientationLandscapeLeft || orientation == UIDeviceOrientationLandscapeRight) {
+//            buttonWidth = kLandscapeButtonWidth;
+//        } 
+//        else {
             buttonWidth = kPortraitButtonWidth;
-        }
+//        }
         
         button.frame = CGRectMake(0, 0, buttonWidth, kButtonHeight);
         button.center = CGPointMake(self.center.x, yOffset);
@@ -205,13 +205,13 @@ const CGFloat kBlackoutViewFadeInOpacity = 0.6;
 - (void)setupTitle {
     
     CGFloat labelWidth;
-    UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
-    if (orientation == UIDeviceOrientationLandscapeLeft || orientation == UIDeviceOrientationLandscapeRight) {
-        labelWidth = kLandscapeButtonWidth;
-    }
-    else {
+//    UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
+//    if (orientation == UIDeviceOrientationLandscapeLeft || orientation == UIDeviceOrientationLandscapeRight) {
+//        labelWidth = kLandscapeButtonWidth;
+//    }
+//    else {
         labelWidth = kPortraitButtonWidth;
-    }
+//    }
     
     self.titleLabel.frame = CGRectMake((self.bounds.size.width - labelWidth) / 2, self.titleLabel.frame.origin.y, labelWidth, self.titleLabel.bounds.size.height);
     
